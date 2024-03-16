@@ -117,7 +117,7 @@ function Widget({ widgetOptions }) {
   }, [ needRefresh ])
 
   /* ========================== TIMER =========================== */
-  const [ timeLeft, setTimeLeft ] = useState(false)
+  const [ timeLeft, setTimeLeft ] = useState<boolean | string>(false)
   useEffect(() => {
     if (farmingFinishDate) {
       const finishDate = Number(farmingFinishDate)
@@ -637,7 +637,7 @@ function Widget({ widgetOptions }) {
                   <>
                     <div className="ff-text-field-container">
                       <div className="ff-text-field-label">
-                        {`Available to deposit:`}
+                        Available to deposit:{' '}
                         <b>{userBalance}{` `}{stakingTokenSymbol}</b>
                         {userBalance > 0 && (
                           <>

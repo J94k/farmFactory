@@ -35,7 +35,7 @@ export const ConnectWallet: React.FC = () => {
                   disabled={isConnecting}
                   onClick={openConnectModal}
                 >
-                  Connect
+                  Unlock wallet
                 </button>
               );
             }
