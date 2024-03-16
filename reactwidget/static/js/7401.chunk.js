@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfarm_widget=self.webpackChunkfarm_widget||[]).push([[7401],{7401:(e,a,f)=>{f.r(a),f.d(a,{default:()=>r.n});var r=f(1212)}}]);

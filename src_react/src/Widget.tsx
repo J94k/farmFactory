@@ -34,9 +34,9 @@ function Widget({ widgetOptions }) {
   const [ farmFetched, setFarmFetched ] = useState(false)
   
   const [ rewardsTokenSymbol, setRewardsTokenSymbol ] = useState(false)
-  const [ rewardsDecimals, setRewardsDecimals ] = useState(false)
+  const [ rewardsDecimals, setRewardsDecimals ] = useState<false | number>(false)
   const [ stakingTokenSymbol, setStakingTokenSymbol ] = useState(false)
-  const [ stakingDecimals, setStakingDecimals ] = useState(false)
+  const [ stakingDecimals, setStakingDecimals ] = useState<false | number>(false)
   
   const [ apyValue, setApyValue ] = useState(false)
   const [ aprValue, setAprValue ] = useState(false)
@@ -82,7 +82,7 @@ function Widget({ widgetOptions }) {
           const otherUserSupply = toFixed(answer.totalSupply) - toFixed(answer.farmingBalance)
           const myPercents = 1 - toFixed(otherUserSupply) / toFixed(totalSupply)
           setUserRate(
-            toFixed(rewardRate / Math.pow(10, rewardsDecimals) * 86400 * myPercents)
+            toFixed(rewardRate / Math.pow(10, rewardsDecimals as number) * 86400 * myPercents)
           )
         } catch (e) {
           setUserRate(false)
@@ -380,13 +380,14 @@ function Widget({ widgetOptions }) {
       <div className="ff-widget">
         <div className="ff-widget-headline">
           <div className="ff-widget-token-icons">
-            {rewardsTokenIcon && (<img className="ff-widget-token-icon" src={rewardsTokenIcon} />)}
-            {stakingTokenIcon && (<img className="ff-widget-token-icon" src={stakingTokenIcon} />)}
+            {rewardsTokenIcon ? (<img className="ff-widget-token-icon" src={rewardsTokenIcon} />) : null}
+            {stakingTokenIcon ? (<img className="ff-widget-token-icon" src={stakingTokenIcon} />) : null}
           </div>
           <div className="ff-title-and-timer">
             <div className="ff-widget-title">
               {stakingTokenSymbol && rewardsTokenSymbol ? (
-                <>{stakingTokenSymbol}{`-`}{rewardsTokenSymbol}</>
+                  <>PREMIUM-COFFEE</>
+                // <>{stakingTokenSymbol}{`-`}{rewardsTokenSymbol}</>
               ) : (
                 <span className="ff-skeleton"></span>
               )}
@@ -415,7 +416,8 @@ function Widget({ widgetOptions }) {
             <div className="ff-widget-label">Earn:</div>
             <div className="ff-widget-value ff-widget-earn-token-name">
               {rewardsTokenSymbol ? (
-                <>{rewardsTokenSymbol}</>
+                <>COFFEE</>
+                  // <>{rewardsTokenSymbol}</>
               ) : (
                 <span className="ff-skeleton"></span>
               )}
@@ -425,7 +427,7 @@ function Widget({ widgetOptions }) {
             <div className="ff-widget-label">APY per token in day:</div>
             <div className="ff-widget-value ff-widget-reward-rate">
               {rewardsDecimals && rewardRate && rewardsTokenSymbol ? (
-                <>{toFixed(rewardRate / Math.pow(10, rewardsDecimals) * 86400)}{' '}{rewardsTokenSymbol}</>
+                <>{toFixed(rewardRate / Math.pow(10, rewardsDecimals) * 86_400)}{' '}{rewardsTokenSymbol}</>
               ) : (
                 <span className="ff-skeleton"></span>
               )}
@@ -462,7 +464,8 @@ function Widget({ widgetOptions }) {
                 <div className="ff-widget-section-title">
                   <b className="ff-rewards-token-name">
                     {rewardsTokenSymbol ? (
-                      <>{rewardsTokenSymbol}</>
+                        <>COFFEE Earned</>
+                       // <>{rewardsTokenSymbol}</>
                     ) : (
                       <span className="ff-skeleton"></span>
                     )}
@@ -579,7 +582,7 @@ function Widget({ widgetOptions }) {
                   <>
                     <div className="ff-text-field-container">
                       <div className="ff-text-field-label">
-                        {`Available to withdraw:`}
+                        Available to withdraw:{' '}
                         <b>{stakedAmount}{` `}{stakingTokenSymbol}</b>
                         {stakedAmount > 0 && (
                           <>

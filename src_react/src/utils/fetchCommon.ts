@@ -4,7 +4,6 @@ import { GET_RPC } from './chains'
 import Web3 from 'web3'
 import BigNumber from 'bignumber.js'
 
-
 const fetchCommon = (opts) => {
   const {
     farmAddress,
