@@ -386,8 +386,7 @@ function Widget({ widgetOptions }) {
           <div className="ff-title-and-timer">
             <div className="ff-widget-title">
               {stakingTokenSymbol && rewardsTokenSymbol ? (
-                  <>PREMIUM-COFFEE</>
-                // <>{stakingTokenSymbol}{`-`}{rewardsTokenSymbol}</>
+                <>{stakingTokenSymbol}{`-`}{rewardsTokenSymbol}</>
               ) : (
                 <span className="ff-skeleton"></span>
               )}
@@ -416,8 +415,7 @@ function Widget({ widgetOptions }) {
             <div className="ff-widget-label">Earn:</div>
             <div className="ff-widget-value ff-widget-earn-token-name">
               {rewardsTokenSymbol ? (
-                <>COFFEE</>
-                  // <>{rewardsTokenSymbol}</>
+                <>{rewardsTokenSymbol}</>
               ) : (
                 <span className="ff-skeleton"></span>
               )}
@@ -464,8 +462,7 @@ function Widget({ widgetOptions }) {
                 <div className="ff-widget-section-title">
                   <b className="ff-rewards-token-name">
                     {rewardsTokenSymbol ? (
-                        <>COFFEE Earned</>
-                       // <>{rewardsTokenSymbol}</>
+                      <>{rewardsTokenSymbol}</>
                     ) : (
                       <span className="ff-skeleton"></span>
                     )}

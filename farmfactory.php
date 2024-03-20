@@ -6,7 +6,7 @@ Author: Denis Ivanov
 Requires PHP: 7.1
 Text Domain: farmfactory
 Domain Path: /lang
-Version: 2.5.1
+Version: 2.5.2
  */
 
 /* Define Plugin Constants */
@@ -16,7 +16,7 @@ define( 'FARMFACTORY_BASE_DIR', __DIR__ );
 define( 'FARMFACTORY_BASE_FILE', __FILE__ );
 define( 'FARMFACTORY_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FARMFACTORY_URL', plugin_dir_url( __FILE__ ) );
-define( 'FARMFACTORY_VER', '2.5.1');
+define( 'FARMFACTORY_VER', '2.5.2');
 
 /**
  * Plugin Init
