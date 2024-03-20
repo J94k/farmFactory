@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
+  "engines": {
+    "node": ">=18.19.0",
+    "npm": "please-use-yarn",
+    "yarn": ">=1.22.21"
+  },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^1.0.5",
     "@testing-library/jest-dom": "^5.17.0",
